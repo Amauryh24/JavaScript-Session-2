@@ -11,4 +11,19 @@
 
 (() => {
     // your code here
+    document.getElementById("run").addEventListener("click", () => {
+
+        window.lib.getPersons(callback)
+    })
+
+
+    function callback(error, tabPerson) {
+        if (tabPerson == undefined) {
+            console.error(error);
+
+        } else {
+            console.table(tabPerson);
+        }
+    }
+
 })();

@@ -11,26 +11,31 @@
 
 (() => {
     // your code here
+
+
     document.getElementById("run").addEventListener("click", () => {
 
         window.lib.getPosts(callback);
-    });
+    })
 
 
-    function callback(error, artciles) {
+    function callback(error, posts) {
 
 
+        posts.forEach(post => {
 
-        artciles.forEach(post => {
+            window.lib.getComments(post.id, function (error, comments) {
 
+                post.commentaires = comments;
 
-            window.lib.getComments(post.id, function (error, contents) {
-
-                post.comments = contents;
-                console.log(post);
             });
+            console.log(post);
         });
+
+
+
     }
+
 
 
 

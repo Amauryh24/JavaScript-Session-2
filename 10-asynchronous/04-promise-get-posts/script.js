@@ -11,4 +11,28 @@
 
 (() => {
     // your code here
+
+
+    document.getElementById("run").addEventListener("click", () => {
+
+        window.lib.getPersons(promise)
+    })
+
+
+    function callback() {
+        return new Promise((resolve, delay) => {
+            console.log("C'est fait");
+            // réussir une fois sur deux
+            if (tabPerson == undefined) {
+                resolve("Réussite");
+            } else {
+                delay("Échec");
+            }
+        })
+    }
+
+    const promise = callback();
+    promise.then(resolve, delay);
+
+
 })();
