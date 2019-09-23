@@ -11,4 +11,18 @@
 
 (() => {
     // your code here
+    document.getElementById("run").addEventListener("click", () => {
+        fetch('http://localhost:3000/heroes') // si c'est vrai, il retourne une promesse : https://www.grafikart.fr/tutoriels/fetch-1017
+            .then(function (response) {
+                return response.json()
+            }).then(function (data) {
+                console.log(data);
+
+            })
+
+
+    });
+
+
+
 })();

@@ -11,4 +11,26 @@
 
 (() => {
     // your code here
+
+    document.getElementById("run").addEventListener("click", () => {
+        asyncCall();
+    });
+
+
+
+    async function asyncCall() {
+        try {
+            let personnes = await window.lib.getPersons();
+            console.log(personnes);
+
+        } catch (error) {
+            console.error(error.message);
+            // expected output: ReferenceError: nonExistentFunction is not defined
+            // Note - error messages will vary depending on browser
+        }
+
+
+
+
+    }
 })();

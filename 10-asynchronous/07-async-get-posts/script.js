@@ -11,4 +11,17 @@
 
 (() => {
     // your code here
+    document.getElementById("run").addEventListener("click", () => {
+
+
+        asyncCall();
+    });
+
+    async function asyncCall() {
+
+        var articles = await window.lib.getPosts();
+        console.log(articles);
+        // expected output: 'resolved'
+    }
+
 })();

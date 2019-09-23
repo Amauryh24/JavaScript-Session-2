@@ -11,4 +11,22 @@
 
 (() => {
     // your code here
+    document.getElementById("run").addEventListener("click", () => {
+        // console.log(window.lib.getPosts());
+
+        let articles = window.lib.getPersons();
+
+
+        articles.then((values) => { // succès
+
+            console.log(values);
+
+
+
+        }).catch(function (error) { // échecs
+            console.error(error.message);
+        });;
+
+
+    });
 })();
