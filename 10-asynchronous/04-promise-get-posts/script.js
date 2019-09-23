@@ -13,26 +13,38 @@
     // your code here
 
 
+    // document.getElementById("run").addEventListener("click", () => {
+
+    //     window.lib.getPosts(returnPromise);
+    // })
+
+    // function returnPromise() {
+    //     return new Promise(function (resolve, delay) {
+    //         resolve('start of new Promise');
+    //     });
+    // }
+
+
     document.getElementById("run").addEventListener("click", () => {
+        // console.log(window.lib.getPosts());
 
-        window.lib.getPersons(promise)
-    })
+        let articles = window.lib.getPosts();
+
+        articles.then((values) => {
+            console.log(values);
+
+        });
 
 
-    function callback() {
-        return new Promise((resolve, delay) => {
-            console.log("C'est fait");
-            // réussir une fois sur deux
-            if (tabPerson == undefined) {
-                resolve("Réussite");
-            } else {
-                delay("Échec");
-            }
-        })
-    }
 
-    const promise = callback();
-    promise.then(resolve, delay);
+
+
+    });
+
+
+
+
+
 
 
 })();

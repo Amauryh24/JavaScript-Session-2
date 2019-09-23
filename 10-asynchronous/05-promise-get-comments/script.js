@@ -11,4 +11,27 @@
 
 (() => {
     // your code here
+    let posts = window.lib.getPosts();
+
+    posts.then((values) => {
+        console.log(values);
+
+        values.forEach(post => {
+            window.lib.getComments(post.id).then((content) => {
+                post.commentaires = content;
+                console.log(post);
+            });
+
+
+
+
+        }); // fin de la boucle
+    });
+
+
+    // posts.forEach(post => {
+    //     console.log(post);
+
+    // });
+
 })();
